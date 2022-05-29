@@ -21,7 +21,6 @@ import {
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import loginBackground from "../assets/img/login.jpg";
-import CardHeaderIcon from "../assets/img/now-logo.png";
 
 class LoginPage extends Component {
   constructor(props) {
@@ -36,6 +35,10 @@ class LoginPage extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.formSubmit = this.formSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    document.title = "Connexion";
   }
 
   handleChange(event) {
@@ -58,21 +61,22 @@ class LoginPage extends Component {
     return (
       <React.Fragment>
         <ExamplesNavbar />
-        <div className="page-header " >
+        <div className="page-header ">
           <div
             className="page-header-image"
             style={{
               backgroundImage: `url(${loginBackground})`,
             }}
-          >
-           </div>
+          ></div>
           <div className="content">
             <Container>
               <Col className="mx-auto" md="5">
-                <Card className="card-login card-plain  clear-filter" filter-color="blue"  >
+                <Card
+                  className="card-login card-plain  clear-filter"
+                  filter-color="blue"
+                >
                   <Form action="" className="form" method="">
                     <CardHeader className="text-center">
-                
                       <div className="logo-container">
                         <h2 className="h2 my-5">Smart Hoceima</h2>
                       </div>
@@ -108,9 +112,9 @@ class LoginPage extends Component {
                           (this.state.lastFocus ? " input-group-focus" : "")
                         }
                       >
-                        <InputGroupAddon addonType="prepend" >
-                          <InputGroupText >
-                            <i className="now-ui-icons ui-1_lock-circle-open mr-2"/>
+                        <InputGroupAddon addonType="prepend">
+                          <InputGroupText>
+                            <i className="now-ui-icons ui-1_lock-circle-open mr-2" />
                           </InputGroupText>
                         </InputGroupAddon>
                         <Input
@@ -133,11 +137,10 @@ class LoginPage extends Component {
                             name="rememberMe"
                             onChange={this.handleChange}
                           />
-                           <span className="form-check-sign">
+                          <span className="form-check-sign">
                             <span className="check"></span>
                           </span>
                           Se souvenir de moi
-                         
                         </Label>
                       </FormGroup>
                     </CardBody>

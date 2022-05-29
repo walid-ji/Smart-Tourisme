@@ -18,10 +18,10 @@ import {
 // core components
 import VisitorForm from "components/registrationComponents/VisitorForm.js";
 import SectorForm from "components/registrationComponents/SectorForm.js";
+import loginBackground from "../assets/img/login.jpg";
 
 class SignupPage extends Component {
-
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       visitorRegistrationFormStatus: true,
@@ -35,7 +35,7 @@ class SignupPage extends Component {
       gender: "",
       description: "",
       activityField: "",
-      type: "Visitor"
+      type: "Visitor",
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -46,47 +46,76 @@ class SignupPage extends Component {
     this.formSubmit = this.formSubmit.bind(this);
   }
 
-  handleChange(event){
-    if(moment.isMoment(event))
-      this.setState({...this.state, birthday: event });
+  handleChange(event) {
+    if (moment.isMoment(event))
+      this.setState({ ...this.state, birthday: event });
     else
-      this.setState({...this.state, [event.target.name]: event.target.value });
-  };
+      this.setState({ ...this.state, [event.target.name]: event.target.value });
+  }
 
   visitorClicked(e) {
-    if(this.state.visitorRegistrationFormStatus === false){
-      this.setState({...this.state, type: "Visitor", visitorRegistrationFormStatus: true});
+    if (this.state.visitorRegistrationFormStatus === false) {
+      this.setState({
+        ...this.state,
+        type: "Visitor",
+        visitorRegistrationFormStatus: true,
+      });
     }
     e.preventDefault();
   }
 
   sectorClicked(e) {
-    if(this.state.visitorRegistrationFormStatus === true){
-      this.setState({...this.state, type: "Sector", visitorRegistrationFormStatus: false});
+    if (this.state.visitorRegistrationFormStatus === true) {
+      this.setState({
+        ...this.state,
+        type: "Sector",
+        visitorRegistrationFormStatus: false,
+      });
     }
     e.preventDefault();
   }
 
-  formSubmit(event){
-    this.props.signup(this.state.type, this.state.login, this.state.password, this.state.name, this.state.description, this.state.activityField, this.state.birthday, this.state.city, this.state.country, this.state.languages, this.state.gender);
+  formSubmit(event) {
+    this.props.signup(
+      this.state.type,
+      this.state.login,
+      this.state.password,
+      this.state.name,
+      this.state.description,
+      this.state.activityField,
+      this.state.birthday,
+      this.state.city,
+      this.state.country,
+      this.state.languages,
+      this.state.gender
+    );
     event.preventDefault();
   }
 
+  componentDidMount() {
+    document.title = "S'inscrire";
+  }
 
-  render(){
+  render() {
     return (
       <React.Fragment>
-        <div className="page-header clear-filter" filter-color="blue">
-          <div  className="section-full-screen section-signup">
+        <div className="page-header">
+          <div
+            className="page-header-image"
+            style={{
+              backgroundImage: `url(${loginBackground})`,
+            }}
+          />
+          <div className="section-full-screen section-signup">
             <Container>
               <Row>
                 <Card className="card-signup" data-background-color="blue">
-                  <Form  className="form">
+                  <Form className="form">
                     <CardHeader className="text-center">
                       <CardTitle className="title-up" tag="h3">
-                        S'inscrir
+                        S'inscrire
                       </CardTitle>
-                   
+
                       <div className="nav-buttons">
                         <Button
                           className="btn-round"
@@ -109,12 +138,11 @@ class SignupPage extends Component {
                       </div>
                     </CardHeader>
                     <CardBody>
-                      {
-                        this.state.visitorRegistrationFormStatus ?
+                      {this.state.visitorRegistrationFormStatus ? (
                         <VisitorForm handleChange={this.handleChange} />
-                        :
+                      ) : (
                         <SectorForm handleChange={this.handleChange} />
-                      }
+                      )}
                     </CardBody>
                     <CardFooter className="text-center">
                       <Button
@@ -147,7 +175,6 @@ class SignupPage extends Component {
       </React.Fragment>
     );
   }
-
 }
 
 export default SignupPage;
