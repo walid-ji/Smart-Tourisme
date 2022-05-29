@@ -16,7 +16,6 @@ import {
 } from "reactstrap";
 
 // core components
-import TransparentFooter from "components/Footers/TransparentFooter.js";
 import VisitorForm from "components/registrationComponents/VisitorForm.js";
 import SectorForm from "components/registrationComponents/SectorForm.js";
 

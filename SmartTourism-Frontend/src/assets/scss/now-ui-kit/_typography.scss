@@ -14,10 +14,10 @@ small{
 }
 
 a{
-    color: $primary-color;
+    color: white;
     &:hover,
     &:focus{
-        color: $primary-color;
+        color: $info-color;
     }
 }
 h1, .h1 {

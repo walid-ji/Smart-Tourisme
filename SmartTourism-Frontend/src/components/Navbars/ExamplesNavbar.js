@@ -64,10 +64,10 @@ function ExamplesNavbar() {
           </UncontrolledDropdown>
           <div className="navbar-translate">
             <NavbarBrand id="navbar-brand" href="#brand">
-              Smart Tourism
+              Smart Hoceima
             </NavbarBrand>
             <UncontrolledTooltip target="#navbar-brand">
-              Welcome to our Smart Tourism Service
+              Welcome to our Smart Hoceima Service
             </UncontrolledTooltip>
           </div>
           <Collapse
@@ -81,42 +81,7 @@ function ExamplesNavbar() {
                   Have an issue?
                 </NavLink>
               </NavItem>
-              <NavItem>
-                <NavLink
-                  href="#"
-                  id="twitter-tooltip"
-                >
-                  <i className="fab fa-twitter"></i>
-                  <p className="d-lg-none d-xl-none">Twitter</p>
-                </NavLink>
-                <UncontrolledTooltip target="#twitter-tooltip">
-                  Follow us on Twitter
-                </UncontrolledTooltip>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  href="#"
-                  id="facebook-tooltip"
-                >
-                  <i className="fab fa-facebook-square"></i>
-                  <p className="d-lg-none d-xl-none">Facebook</p>
-                </NavLink>
-                <UncontrolledTooltip target="#facebook-tooltip">
-                  Like us on Facebook
-                </UncontrolledTooltip>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  href="#"
-                  id="instagram-tooltip"
-                >
-                  <i className="fab fa-instagram"></i>
-                  <p className="d-lg-none d-xl-none">Instagram</p>
-                </NavLink>
-                <UncontrolledTooltip target="#instagram-tooltip">
-                  Follow us on Instagram
-                </UncontrolledTooltip>
-              </NavItem>
+          
             </Nav>
           </Collapse>
         </Container>

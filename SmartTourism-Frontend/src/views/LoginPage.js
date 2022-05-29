@@ -20,10 +20,11 @@ import {
 
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
-import TransparentFooter from "components/Footers/TransparentFooter.js";
+import loginBackground from "../assets/img/login.jpg";
+import CardHeaderIcon from "../assets/img/now-logo.png";
 
 class LoginPage extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       firstFocus: false,
@@ -37,41 +38,43 @@ class LoginPage extends Component {
     this.formSubmit = this.formSubmit.bind(this);
   }
 
-  handleChange(event){
+  handleChange(event) {
     const input = event.target;
-    const value = input.type === 'checkbox' ? input.checked : input.value;
- 
-    this.setState({...this.state, [input.name]: value });
+    const value = input.type === "checkbox" ? input.checked : input.value;
+
+    this.setState({ ...this.state, [input.name]: value });
   }
 
-  formSubmit(event){
+  formSubmit(event) {
     event.preventDefault();
-    this.props.login(this.state.login, this.state.password, this.state.rememberMe);
-    
+    this.props.login(
+      this.state.login,
+      this.state.password,
+      this.state.rememberMe
+    );
   }
 
-  render(){
+  render() {
     return (
       <React.Fragment>
         <ExamplesNavbar />
-        <div className="page-header clear-filter" filter-color="blue">
+        <div className="page-header " >
           <div
             className="page-header-image"
             style={{
-              backgroundImage: "url(" + require("assets/img/login.jpg") + ")",
+              backgroundImage: `url(${loginBackground})`,
             }}
-          ></div>
+          >
+           </div>
           <div className="content">
             <Container>
-              <Col className="ml-auto mr-auto" md="4">
-                <Card className="card-login card-plain">
+              <Col className="mx-auto" md="5">
+                <Card className="card-login card-plain  clear-filter" filter-color="blue"  >
                   <Form action="" className="form" method="">
                     <CardHeader className="text-center">
+                
                       <div className="logo-container">
-                        <img
-                          alt="..."
-                          src={require("assets/img/now-logo.png")}
-                        ></img>
+                        <h2 className="h2 my-5">Smart Hoceima</h2>
                       </div>
                     </CardHeader>
                     <CardBody>
@@ -83,18 +86,21 @@ class LoginPage extends Component {
                       >
                         <InputGroupAddon addonType="prepend">
                           <InputGroupText>
-                            <i className="now-ui-icons users_circle-08"></i>
+                            <i className="now-ui-icons users_circle-08 mr-2"></i>
                           </InputGroupText>
                         </InputGroupAddon>
                         <Input
                           placeholder="Login..."
                           type="text"
-                          autoComplete=""
                           name="login"
-                          onFocus={() => this.setState({...this.state, firstFocus: true})}
-                          onBlur={() => this.setState({...this.state, firstFocus: false})}
+                          onFocus={() =>
+                            this.setState({ ...this.state, firstFocus: true })
+                          }
+                          onBlur={() =>
+                            this.setState({ ...this.state, firstFocus: false })
+                          }
                           onChange={this.handleChange}
-                        ></Input>
+                        />
                       </InputGroup>
                       <InputGroup
                         className={
@@ -102,33 +108,36 @@ class LoginPage extends Component {
                           (this.state.lastFocus ? " input-group-focus" : "")
                         }
                       >
-                        <InputGroupAddon addonType="prepend">
-                          <InputGroupText>
-                            <i className="now-ui-icons ui-1_lock-circle-open"></i>
+                        <InputGroupAddon addonType="prepend" >
+                          <InputGroupText >
+                            <i className="now-ui-icons ui-1_lock-circle-open mr-2"/>
                           </InputGroupText>
                         </InputGroupAddon>
                         <Input
                           placeholder="Mot de passe..."
                           type="password"
-                          autoComplete=""
                           name="password"
-                          onFocus={() => this.setState({...this.state, lastFocus: true})}
-                          onBlur={() => this.setState({...this.state, lastFocus: false})}
+                          onFocus={() =>
+                            this.setState({ ...this.state, lastFocus: true })
+                          }
+                          onBlur={() =>
+                            this.setState({ ...this.state, lastFocus: false })
+                          }
                           onChange={this.handleChange}
                         ></Input>
                       </InputGroup>
-                      <FormGroup check>
+                      <FormGroup check className="text-left">
                         <Label check>
                           <Input
-                            defaultValue=""
                             type="checkbox"
                             name="rememberMe"
                             onChange={this.handleChange}
-                          ></Input>
-                          Se souvenir de moi
-                          <span className="form-check-sign">
+                          />
+                           <span className="form-check-sign">
                             <span className="check"></span>
                           </span>
+                          Se souvenir de moi
+                         
                         </Label>
                       </FormGroup>
                     </CardBody>
@@ -138,16 +147,12 @@ class LoginPage extends Component {
                         className="btn-round"
                         color="info"
                         onClick={this.formSubmit}
-                        size="lg"
                       >
                         Se connecter
                       </Button>
                       <div className="pull-left">
                         <h6>
-                          <a
-                            className="link"
-                            href="/signup-page"
-                          >
+                          <a className="link" href="/signup-page">
                             Créer un Compte
                           </a>
                         </h6>
@@ -169,12 +174,10 @@ class LoginPage extends Component {
               </Col>
             </Container>
           </div>
-          <TransparentFooter />
         </div>
       </React.Fragment>
     );
   }
-  
 }
 
 export default LoginPage;

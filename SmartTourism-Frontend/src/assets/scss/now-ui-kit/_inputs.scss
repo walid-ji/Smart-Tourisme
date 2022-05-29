@@ -110,11 +110,12 @@
 @include input-lg-padding($padding-large-vertical, $padding-input-horizontal);
 @include input-base-padding($padding-input-vertical, $padding-input-horizontal);
 
+/***login form***/
 .form-group.no-border,
 .input-group.no-border{
     .form-control,
     .form-control + .input-group-text{
-        background-color: $opacity-gray-3;
+        background-color: $opacity-gray-8;
         border: medium none;
         &:focus,
         &:active,
@@ -133,7 +134,7 @@
     }
     .input-group-prepend{
       .input-group-text{
-          background-color: $opacity-gray-3;
+          background-color: $opacity-gray-8;
           border: none;
           border-left: transparent !important;
       }

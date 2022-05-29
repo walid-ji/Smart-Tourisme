@@ -13,10 +13,13 @@ export const UserDetails = (
   switch (action.type) {
     case ActionTypes.LOGIN_SUCCESS:
       window.localStorage.setItem("authToken", action.payload.authToken);
+      if(action.payload.rememberMe)
+      {
         window.localStorage.setItem(
           "user",
           JSON.stringify(action.payload.user)
         );
+      }
     
       return {
         ...state,
