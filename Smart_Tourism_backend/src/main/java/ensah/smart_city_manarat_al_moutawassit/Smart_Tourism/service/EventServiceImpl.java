@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import ensah.smart_city_manarat_al_moutawassit.Smart_Tourism.dao.EventRepository;
+import ensah.smart_city_manarat_al_moutawassit.Smart_Tourism.repositories.EventRepository;
 import ensah.smart_city_manarat_al_moutawassit.Smart_Tourism.entity.Event;
 import ensah.smart_city_manarat_al_moutawassit.Smart_Tourism.entity.users.Visitor;
 

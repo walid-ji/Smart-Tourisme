@@ -1,4 +1,4 @@
-package ensah.smart_city_manarat_al_moutawassit.Smart_Tourism.dao;
+package ensah.smart_city_manarat_al_moutawassit.Smart_Tourism.repositories;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 

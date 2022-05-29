@@ -14,8 +14,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import ensah.smart_city_manarat_al_moutawassit.Smart_Tourism.dao.SectorRepository;
-import ensah.smart_city_manarat_al_moutawassit.Smart_Tourism.dao.VisitorRepository;
+import ensah.smart_city_manarat_al_moutawassit.Smart_Tourism.repositories.SectorRepository;
+import ensah.smart_city_manarat_al_moutawassit.Smart_Tourism.repositories.VisitorRepository;
 import ensah.smart_city_manarat_al_moutawassit.Smart_Tourism.dto.UserDTO;
 import ensah.smart_city_manarat_al_moutawassit.Smart_Tourism.entity.users.Sector;
 import ensah.smart_city_manarat_al_moutawassit.Smart_Tourism.entity.users.User;

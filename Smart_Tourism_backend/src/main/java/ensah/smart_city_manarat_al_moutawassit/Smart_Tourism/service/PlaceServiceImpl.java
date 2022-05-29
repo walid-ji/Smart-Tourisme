@@ -9,9 +9,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import ensah.smart_city_manarat_al_moutawassit.Smart_Tourism.dao.BeachRepository;
-import ensah.smart_city_manarat_al_moutawassit.Smart_Tourism.dao.HotelRepository;
-import ensah.smart_city_manarat_al_moutawassit.Smart_Tourism.dao.ParkRepository;
+import ensah.smart_city_manarat_al_moutawassit.Smart_Tourism.repositories.BeachRepository;
+import ensah.smart_city_manarat_al_moutawassit.Smart_Tourism.repositories.HotelRepository;
+import ensah.smart_city_manarat_al_moutawassit.Smart_Tourism.repositories.ParkRepository;
 import ensah.smart_city_manarat_al_moutawassit.Smart_Tourism.dto.PlaceDTO;
 import ensah.smart_city_manarat_al_moutawassit.Smart_Tourism.entity.guide.Beach;
 import ensah.smart_city_manarat_al_moutawassit.Smart_Tourism.entity.guide.Hotel;
