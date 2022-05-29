@@ -1,0 +1,56 @@
+{
+  "name": "now-ui-kit-react",
+  "version": "1.5.0",
+  "private": true,
+  "dependencies": {
+    "@progress/kendo-react-charts": "^4.2.0",
+    "axios": "^0.21.1",
+    "chart.js": "^2.9.4",
+    "gulp": "4.0.2",
+    "gulp-append-prepend": "1.0.9",
+    "leaflet": "^1.7.1",
+    "moment": "2.29.1",
+    "node-sass": "6.0.0",
+    "nouislider": "15.1.0",
+    "prop-types": "^15.7.2",
+    "react": "17.0.2",
+    "react-bootstrap-switch": "15.5.3",
+    "react-datetime": "3.0.4",
+    "react-dom": "17.0.2",
+    "react-leaflet": "^3.2.5",
+    "react-minimal-pie-chart": "^8.1.0",
+    "react-player": "^2.7.2",
+    "react-redux": "5.0.7",
+    "react-redux-form": "1.16.8",
+    "react-router": "5.2.0",
+    "react-router-dom": "5.2.0",
+    "react-scripts": "4.0.3",
+    "reactstrap": "8.9.0",
+    "redux": "3.7.2",
+    "redux-logger": "3.0.6",
+    "redux-thunk": "2.2.0",
+    "video-react": "^0.14.1",
+    "yarn": "^1.22.10"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build && gulp licenses",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
+    "compile-sass": "node-sass src/assets/scss/now-ui-kit.scss src/assets/css/now-ui-kit.css",
+    "minify-sass": "node-sass src/assets/scss/now-ui-kit.scss src/assets/css/now-ui-kit.min.css --output-style compressed",
+    "map-sass": "node-sass src/assets/scss/now-ui-kit.scss src/assets/css/now-ui-kit.css --source-map true"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ],
+  "optionalDependencies": {
+    "typescript": "4.2.4"
+  }
+}
