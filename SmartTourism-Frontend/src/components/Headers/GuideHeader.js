@@ -4,6 +4,7 @@ import React from "react";
 import { Container } from "reactstrap";
 
 // core components
+import GuideBackground from "../../assets/img/images/bg6.jpg";
 
 function GuideHeader(props) {
   let pageHeader = React.createRef();
@@ -12,7 +13,7 @@ function GuideHeader(props) {
     if (window.innerWidth > 991) {
       const updateScroll = () => {
         let windowScrollTop = window.pageYOffset / 3;
-        if(pageHeader.current)
+        if (pageHeader.current)
           pageHeader.current.style.transform =
             "translate3d(0," + windowScrollTop + "px,0)";
       };
@@ -28,7 +29,7 @@ function GuideHeader(props) {
         <div
           className="page-header-image"
           style={{
-            backgroundImage: "url(https://ml89nixsxwwy.i.optimole.com/w:1080/h:675/q:auto/rt:fill/g:ce/https://www.eshop-promotion.com/wp-content/uploads/2019/02/e-commerce.jpg)",
+            backgroundImage: `url(${GuideBackground})`,
           }}
           ref={pageHeader}
         ></div>

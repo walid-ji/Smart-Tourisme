@@ -4,6 +4,7 @@ import React from "react";
 // reactstrap components
 import { Container } from "reactstrap";
 // core components
+import headerBackground from "../../assets/img/images/header.jpg";
 
 function Header() {
   let pageHeader = React.createRef();
@@ -28,7 +29,7 @@ function Header() {
         <div
           className="page-header-image"
           style={{
-            backgroundImage: "url(" + require("assets/img/images/header.jpg") + ")",
+            backgroundImage: `url(${headerBackground})`,
           }}
           ref={pageHeader}
         ></div>

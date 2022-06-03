@@ -2,7 +2,7 @@ import React from "react";
 
 // reactstrap components
 import { Container } from "reactstrap";
-
+import AlbumBackground from "../../assets/img/BackgroundAlbum.jpg";
 // core components
 
 function AlbumHeader(props) {
@@ -12,7 +12,7 @@ function AlbumHeader(props) {
     if (window.innerWidth > 991) {
       const updateScroll = () => {
         let windowScrollTop = window.pageYOffset / 3;
-        if(pageHeader.current)
+        if (pageHeader.current)
           pageHeader.current.style.transform =
             "translate3d(0," + windowScrollTop + "px,0)";
       };
@@ -28,7 +28,7 @@ function AlbumHeader(props) {
         <div
           className="page-header-image"
           style={{
-            backgroundImage: "url(" + require("assets/img/BackgroundAlbum.jpg") + ")",
+            backgroundImage: `url(${AlbumBackground})`,
           }}
           ref={pageHeader}
         ></div>
