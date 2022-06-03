@@ -151,7 +151,7 @@ class SignupPage extends Component {
                         onClick={this.formSubmit}
                         size="lg"
                       >
-                        S'inscrir
+                        S'inscrire
                       </Button>
                     </CardFooter>
                   </Form>
