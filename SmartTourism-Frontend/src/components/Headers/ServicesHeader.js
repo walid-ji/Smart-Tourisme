@@ -4,7 +4,7 @@ import React from "react";
 import { Container } from "reactstrap";
 
 // core components
-
+import ServicesBackground from "../../assets/img/bg6.jpg";
 function ServicesHeader(props) {
   let pageHeader = React.createRef();
 
@@ -28,7 +28,7 @@ function ServicesHeader(props) {
         <div
           className="page-header-image"
           style={{
-            backgroundImage: "url(" + require("assets/img/bg6.jpg") + ")",
+            backgroundImage: `url(${ServicesBackground})`,
           }}
           ref={pageHeader}
         ></div>
