@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@progress/kendo-react-charts": "^4.2.0",
-    "axios": "^0.21.1",
+    "axios": "^0.21.4",
     "chart.js": "^2.9.4",
     "gulp": "4.0.2",
     "gulp-append-prepend": "1.0.9",

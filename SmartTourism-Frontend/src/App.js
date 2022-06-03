@@ -31,7 +31,7 @@ const mapDispatchToProps = dispatch => ({
   signup: (type, username, password, name, description, activityField, birthday, city, country, languages, gender) => dispatch(signup(type, username, password, name, description, activityField, birthday, city, country, languages, gender)),
   login: (username, password, rememberMe) => dispatch(login(username, password, rememberMe)),
   logout: () => dispatch(logout()),
-  postEvent: (name, date, localisation, description, isPrivate) => dispatch(postEvent(name, date, localisation, description, isPrivate)),
+  postEvent: (name, date, localisation, description, isPrivate,image) => dispatch(postEvent(name, date, localisation, description, isPrivate,image)),
   fetchEvents: () => dispatch(fetchEvents()),
   showInterest: (eventId, interested) => dispatch(showInterest(eventId, interested)),
   fetchHotels: () => dispatch(fetchHotels()),

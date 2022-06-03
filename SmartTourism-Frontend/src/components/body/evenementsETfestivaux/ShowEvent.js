@@ -1,34 +1,30 @@
 import React from "react";
-import { Loading } from 'components/LoadingComponent';
+import { Loading } from "components/LoadingComponent";
+import EventBackgroundOne from "../../../assets/img/images/header1.jpg";
+import EventBackgroundTwo from "../../../assets/img/images/bg1.jpg";
 
 // reactstrap components
-import {
-  Container,
-  Row,
-  Col,
-} from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 import Dashboard from "./dashboard/Dashboard";
 
-const ShowEvent= (props) =>{
+const ShowEvent = (props) => {
   if (props.isLoading) {
-      return(
-          <div className="container">
-              <div className="row">            
-                  <Loading />
-              </div>
-          </div>
-      );
-  }
-  else if (props.errMess) {
-      return(
-          <div className="container">
-              <div className="row">            
-                  <h4>{props.errMess}</h4>
-              </div>
-          </div>
-      );
-  }
-  else if (props.event != null){
+    return (
+      <div className="container">
+        <div className="row">
+          <Loading />
+        </div>
+      </div>
+    );
+  } else if (props.errMess) {
+    return (
+      <div className="container">
+        <div className="row">
+          <h4>{props.errMess}</h4>
+        </div>
+      </div>
+    );
+  } else if (props.event != null) {
     return (
       <Container>
         <Row>
@@ -43,8 +39,7 @@ const ShowEvent= (props) =>{
               <div
                 className="image-container image-left"
                 style={{
-                  backgroundImage:
-                    "url(" + require("assets/img/images/header1.jpg") + ")",
+                  backgroundImage: `url(${EventBackgroundOne})`,
                 }}
               >
                 <p className="blockquote blockquote-info">
@@ -58,12 +53,18 @@ const ShowEvent= (props) =>{
               <div
                 className="image-container image-right"
                 style={{
-                  backgroundImage:
-                    "url(" + require("assets/img/images/bg1.jpg") + ")",
+                  backgroundImage: `url(${EventBackgroundTwo})`,
                 }}
               ></div>
               <h3>
-                Bienvenue le {new Intl.DateTimeFormat('fr-FR', { year: 'numeric', month: 'long', day: '2-digit', hour: '2-digit', minute: '2-digit'}).format(new Date(Date.parse(props.event.date)))} 
+                Bienvenue le{" "}
+                {new Intl.DateTimeFormat("fr-FR", {
+                  year: "numeric",
+                  month: "long",
+                  day: "2-digit",
+                  hour: "2-digit",
+                  minute: "2-digit",
+                }).format(new Date(Date.parse(props.event.date)))}
               </h3>
               <h3> {props.event.localisation}</h3>
             </Col>
@@ -71,20 +72,16 @@ const ShowEvent= (props) =>{
           <div className="separator separator-primary"></div>
           <Row>
             <Col className="ml-auto mr-auto text-center" md="8">
-                <p>
-                {props.event.description}
-                </p>
+              <p>{props.event.description}</p>
             </Col>
           </Row>
           <Row>
-            <Dashboard guests={props.event.guests}/>
+            <Dashboard guests={props.event.guests} />
           </Row>
         </div>
       </Container>
     );
-  }
-  else
-      return(<div></div>)
-}
+  } else return <div></div>;
+};
 
 export default ShowEvent;

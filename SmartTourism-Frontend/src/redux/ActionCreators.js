@@ -8,14 +8,15 @@ export const addEvent = (event) => ({
     payload: event
   });
   
-export const postEvent = (name, date, localisation, description, isPrivate) => (dispatch) => {
+export const postEvent = (name, date, localisation, description, isPrivate,image) => (dispatch) => {
   
     const newEvent = {
         name: name,
         date: date,
         localisation: localisation,
         description: description,
-        isPrivate: isPrivate
+        isPrivate: isPrivate,
+        eventImage : image
     };
 
     let token = window.localStorage.getItem("authToken")? window.localStorage.getItem("authToken"): "";

@@ -41,7 +41,7 @@ class EventItem extends Component {
         return (
             <Card>
                 <Link to={`/events_festivaux/${this.props.event.id}`}  style={{ textDecoration: 'none' }}>
-                    <CardImg width="100%" src={image} alt={this.props.event.name} />
+                    <CardImg style={{height:"300px"}} width="100%"  src={this.props.event.eventImage ? this.props.event.eventImage:image } alt={this.props.event.name} />
                     <CardBody>
                         <CardTitle tag="h5" ><strong>{this.props.event.name}</strong></CardTitle>
                         <CardSubtitle tag="h6" className="mb-2 text-muted">{this.props.event.localisation}</CardSubtitle>
