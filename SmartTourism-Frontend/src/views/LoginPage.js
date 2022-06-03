@@ -21,6 +21,7 @@ import {
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import loginBackground from "../assets/img/login.jpg";
+import { NavLink } from "react-router-dom";
 
 class LoginPage extends Component {
   constructor(props) {
@@ -155,9 +156,9 @@ class LoginPage extends Component {
                       </Button>
                       <div className="pull-left">
                         <h6>
-                          <a className="link" href="/signup-page">
+                          <NavLink className="link" to="/signup-page">
                             Créer un Compte
-                          </a>
+                          </NavLink>
                         </h6>
                       </div>
                       <div className="pull-right">
