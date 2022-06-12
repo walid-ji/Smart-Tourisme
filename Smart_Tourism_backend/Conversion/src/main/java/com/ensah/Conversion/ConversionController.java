@@ -39,8 +39,6 @@ public class ConversionController {
     public @ResponseBody
     String convertToVideo(@RequestPart("file") MultipartFile[] files) throws IOException, InterruptedException {
 
-        System.out.println("hello");
-
         for (int i = 0; i < files.length; i++) {
             Path fileNameAndPath = Paths.get(uploadDirectory, files[i].getOriginalFilename());
             System.out.println(fileNameAndPath);

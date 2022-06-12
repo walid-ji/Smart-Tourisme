@@ -15,7 +15,7 @@ import ensah.smart_city_manarat_al_moutawassit.Smart_Tourism.entity.users.Visito
 public class EventServiceImpl implements EventService {
 	
 	@Autowired
-	private EventRepository repository;
+	private EventRepository eventRepository;
 	
 	@Autowired UserService userService;
 
@@ -30,12 +30,12 @@ public class EventServiceImpl implements EventService {
 		//if the id is not specified we create a new element
 		if(event.getId() == null || event.getId().isEmpty()) {
 			event.setGuests(null);
-			return repository.save(event);
+			return eventRepository.save(event);
 		}
 		
 		//if the id is specified we search and update the element with that id
 		//if no element is found we create a new one
-		return repository.findById(event.getId())
+		return eventRepository.findById(event.getId())
 			.map(element -> {
 				element.setName(event.getName());
 				element.setDate(event.getDate());
@@ -43,12 +43,12 @@ public class EventServiceImpl implements EventService {
 				element.setLocalisation(event.getLocalisation());
 				element.setPrivate(event.isPrivate());
 				element.setGuests(event.getGuests());
-				return repository.save(element);
+				return eventRepository.save(element);
 			})
 			.orElseGet(() -> {
 				event.setId(null);
 				event.setGuests(null);
-				return repository.save(event);
+				return eventRepository.save(event);
 			});
 	}
 
@@ -58,7 +58,7 @@ public class EventServiceImpl implements EventService {
 	 */
 	@Override
 	public void deleteById(String id) {
-		repository.deleteById(id);
+		eventRepository.deleteById(id);
 	}
 
 	/**
@@ -67,7 +67,7 @@ public class EventServiceImpl implements EventService {
 	 */
 	@Override
 	public List<Event> findAll() {
-		return repository.findAll();
+		return eventRepository.findAll();
 	}
 	
 	/**
@@ -76,7 +76,7 @@ public class EventServiceImpl implements EventService {
 	 */
 	@Override
 	public Event findOne(String eventId) {
-		Optional<Event> result = repository.findById(eventId);
+		Optional<Event> result = eventRepository.findById(eventId);
 		Event event = null;
 		if(result.isPresent())
 			event = result.get();
@@ -91,16 +91,13 @@ public class EventServiceImpl implements EventService {
 	 */
 	@Override
 	public Event addGuest(String eventId, String userId) {
-		return repository.findById(eventId)
+		return eventRepository.findById(eventId)
 				.map(event -> {
 					Visitor guest = userService.findVisitorById(userId);
-					//System.out.println(guest.toString());
 					event.addGuest(guest);
-					return repository.save(event);
+					return eventRepository.save(event);
 				})
-				.orElseGet(() -> {
-					return null;
-				});
+				.orElse(null);
 	}
 
 	/**
@@ -111,14 +108,12 @@ public class EventServiceImpl implements EventService {
 	 */
 	@Override
 	public Event removeGuest(String eventId, String userId) {
-		return repository.findById(eventId)
+		return eventRepository.findById(eventId)
 				.map(event -> {
 					event.removeGuest(userId);
-					return repository.save(event);
+					return eventRepository.save(event);
 				})
-				.orElseGet(() -> {
-					return null;
-				});
+				.orElse(null);
 	}
 
 }

@@ -8,6 +8,7 @@ import java.util.Set;
 
 import ensah.smart_city_manarat_al_moutawassit.Smart_Tourism.utils.enums.UserRoles;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -21,6 +22,7 @@ import ensah.smart_city_manarat_al_moutawassit.Smart_Tourism.dto.UserDTO;
 import ensah.smart_city_manarat_al_moutawassit.Smart_Tourism.entity.users.Sector;
 import ensah.smart_city_manarat_al_moutawassit.Smart_Tourism.entity.users.User;
 import ensah.smart_city_manarat_al_moutawassit.Smart_Tourism.entity.users.Visitor;
+import org.springframework.web.server.ResponseStatusException;
 
 
 @Service(value = "userService")
@@ -89,9 +91,6 @@ public class UserServiceImpl implements UserDetailsService, UserService {
         if (user.getUserId() == null || user.getUserId().isEmpty()) {
             return sectorRepository.save(user);
         }
-
-        //if the id is specified we search and update the element with that id
-        //if no element is found we create a new one
         return sectorRepository.findById(user.getUserId())
                 .map(element -> {
                     element.setName(user.getName());
@@ -149,8 +148,8 @@ public class UserServiceImpl implements UserDetailsService, UserService {
     }
 
     /**
-     * loadUserByUsername looks up the user through the DAO repository for the user object and returns a new
-     * org.springframework.security.core.userdetails.User constructed with username, password, and a Set of granted authorities.
+     * loadUserByUsername looks up the user through the DAO repository for the user object
+     * User constructed with username, password, and a Set of granted authorities.
      *
      * @param username the email of the user to fetch
      * @return org.springframework.security.core.userdetails.User constructed with username, password, and a Set of granted authorities.
