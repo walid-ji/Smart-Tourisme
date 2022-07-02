@@ -1,0 +1,3 @@
+export const ADD_HOTELS = 'ADD_HOTELS';
+export const HOTELS_LOADING = 'HOTELS_LOADING';
+export const HOTELS_FAILED = 'HOTELS_FAILED';

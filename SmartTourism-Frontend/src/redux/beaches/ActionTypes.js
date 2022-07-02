@@ -1,0 +1,2 @@
+export const BEACHES_LOADING = 'BEACHES_LOADING';
+export const BEACHES_FAILED = 'BEACHES_FAILED';

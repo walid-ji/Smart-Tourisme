@@ -108,34 +108,34 @@ class Guide extends Component {
   }
 
 	render(){
-		var data = { isLoading: false,errMess: null, data:[]};
+		var data = { isLoading: false,errMess: null, places:[]};
 		switch(this.state.selectedCategory){
 			case "hotels":
 				if(this.props.hotels){
 					data.isLoading = this.props.hotels.isLoading;
 					data.errMess = this.props.hotels.errMess;
-					data.data = this.props.hotels.hotels;
+					data.places = this.props.hotels.hotels;
 				}
 				break;
 			case "plages":
 				if(this.props.beaches){
 					data.isLoading = this.props.beaches.isLoading;
 					data.errMess = this.props.beaches.errMess;
-					data.data = this.props.beaches.beaches;
+					data.places = this.props.beaches.beaches;
 				}
 				break;
 			case "parcs":
 				if(this.props.parks){
 					data.isLoading = this.props.parks.isLoading;
 					data.errMess = this.props.parks.errMess;
-					data.data = this.props.parks.parks;
+					data.places = this.props.parks.parks;
 				}
 				break;
 			default:
 				if(this.props.hotels){
 					data.isLoading = this.props.hotels.isLoading;
 					data.errMess = this.props.hotels.errMess;
-					data.data = this.props.hotels.hotels;
+					data.places = this.props.hotels.hotels;
 				}
 				break;
 		}
@@ -206,7 +206,7 @@ class Guide extends Component {
 										    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 										  />
 										  {
-										  	data.data.map((elem) => {
+										  	data.places.map((elem) => {
 										  		return(
 										  				<Marker position={elem.location} key={elem.id} icon={this.getMarkerIcon(elem.id)} >
 														    <Tooltip>
@@ -225,12 +225,12 @@ class Guide extends Component {
 									<Container>
 										<Row>
 											{
-												data.data.map((elem) => {
+												data.places.map((elem) => {
 													return (
 														<div className="col-12 col-md-4" key={elem.id}>
 															<Card>
 								                <CustomCarousel items={elem.images} />
-								                <Link id={elem.id} to="#map_container" onClick={this.handleClick}  style={{ textDecoration: 'none' }}>
+								                <Link id={elem.id} to="#map_container" onClick={this.handleClick}  style={{ textDecoration: 'none',color : "#0AA1DD" }}>
 								                  <CardBody>
 								                      <CardTitle tag="h5" ><strong>{elem.name}</strong></CardTitle>
 								                      {this.state.selectedCategory === "hotels" ? <CardSubtitle tag="h6" className="mb-2 text-muted">{this.stars(elem.stars)}</CardSubtitle> : <></>}

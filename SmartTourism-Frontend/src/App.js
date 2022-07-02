@@ -14,7 +14,11 @@ import DefaultFooter from "components/Footers/DefaultFooter";
 
 import { connect } from 'react-redux';
 
-import { login, signup, logout, postEvent, fetchEvents, showInterest, fetchHotels, fetchBeaches, fetchParks } from './redux/ActionCreators';
+import { login, signup, logout } from './redux/users/UsersActions';
+import {  fetchBeaches } from './redux/beaches/BeachesActions';
+import {  fetchParks } from './redux/parks/ParksActions';
+import {  postEvent, fetchEvents, showInterest } from './redux/events/EventsActions';
+import {  fetchHotels } from './redux/hotels/HotelsActions';
 
 
 const mapStateToProps = state => {
