@@ -1,5 +1,5 @@
 import {baseUrl} from "../../shared/baseUrl";
-import * as ActionTypes from "../ActionTypes";
+import * as ActionTypes from "./ActionTypes";
 
 export const beachesLoading = () => ({
     type: ActionTypes.BEACHES_LOADING

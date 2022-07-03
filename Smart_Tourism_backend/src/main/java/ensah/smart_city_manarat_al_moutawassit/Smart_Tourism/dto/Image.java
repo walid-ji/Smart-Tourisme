@@ -17,7 +17,7 @@ public class Image {
 	/**
 	 * constructor with params
 	 * @param src
-	 * @param altText
+	 * @param altText  <groupId>org.mongodb</groupId>
 	 * @param caption
 	 */
 	public Image(String src, String altText, String caption) {

@@ -1,4 +1,4 @@
-import * as ActionTypes from '../ActionTypes';
+import * as ActionTypes from './ActionTypes';
 import { baseUrl } from '../../shared/baseUrl';
 import moment from "moment";
 import { Router } from 'react-router';
